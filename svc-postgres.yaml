@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres14 #Same from the docker-compose, represents the host's name
+spec:
+  ports:
+    - port: 5432 # "-" represents an array, we can have multiple ports.
+      protocol: TCP
+      targetPort: 5432 # port will be used by the DB
+  selector:
+    app: postgres
+  type: ClusterIP

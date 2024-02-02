@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: msvc-course
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8002
+      protocol: TCP
+      targetPort: 8002 #Equivalent to the container port
+  selector:
+    app: msvc-course #Match against template.labels.name from deployment-msvc-course.yaml

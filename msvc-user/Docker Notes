@@ -1,0 +1,143 @@
+-------------------------------------------------
+#Import openjdk for linux
+FROM openjdk:17.0.2
+#Create work directory
+WORKDIR /app
+#Will be copied to /app folder.
+COPY ./target/msvc-users-0.0.1-SNAPSHOT.jar .
+#Expose port.
+EXPOSE 8001
+
+ENTRYPOINT ["java","-jar","msvc-users-0.0.1-SNAPSHOT.jar"]
+
+
+
+#En consola:
+#1. ir hacia la ruta
+# cd .\msvc-users\msvc-users\
+#2. construir imagen, el ENTRYPOINT se ejecuta aparte cuando damos correr al contenedor:
+# docker build .
+#3. revisar la imagen se haya creado.
+# docker images
+#4.corremos la imagen en un contenedor.
+# docker run <IMAGE ID>
+# NOTA: Al ejecutar la imagen, no estamos indicando el puerto de salida, esto lo podemos verificar con el comando:
+# docker ps
+
+#C:\Users\Nacho>docker ps
+#CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS      NAMES
+#017cd590cce8   01817eb90be1   "java -jar msvc-usua…"   5 seconds ago   Up 5 seconds   8001/tcp   jovial_sanderson
+
+#EL ORDEN DE LOS ARGUMENTOS IMPORTA, POR EJEMPLO:
+#> docker run 01817eb90be1 -p 8001:8001
+# Aqui correra la imagen, pero el ultimo parametro nunca se configura.
+
+#El comando correcto seria
+#> docker run -p 8001:8001 01817eb90be1 donde -p puertoExterno:puertoInterior
+
+#RESUMEN.
+
+#>docker build .
+#>docker build -t msvc_usuarios
+#>docker run -p <puertoINT>:<puertoEXT> <image id>
+#Otra variante es ejetura por nombre TAG:
+#> docker run -p 8001:8001 -t msvc_usuarios
+
+#>docker ps
+#>docker images
+#>docker stop [<imageID> | <tag>]
+
+#Ver imagenes detenidas.
+#> docker ps -a
+-----------------------------------------------------------------
+#Import openjdk for linuix
+FROM openjdk:17.0.2
+#Create work directory
+WORKDIR /app/msvc-users
+COPY ./pom.xml  /app
+COPY ./msvc-users .
+RUN ./mvnw clean package -e -DskipTests
+#Will be copied to /app folder.
+COPY ./msvc-users/target/msvc-users-0.0.1-SNAPSHOT.jar .
+#Expose port.
+EXPOSE 8001
+
+ENTRYPOINT ["java","-jar","./target/msvc-users-0.0.1-SNAPSHOT.jar"]
+
+
+#linea 5: copiar el pom del parent
+#linea 7: Se genera la imagen (Snapshot) dentro de la imagen de docker. El RUN se ejecuta luego  de que se construye la imagen
+
+#Luego en la terminal:
+#1. Ir hacia el path raiz del proyecto.
+#Ejecutar el comando
+#> docker build -t msvc-users .  -f .\msvc-users\msvc-users\Dockerfile
+#Donde -t nombre del tag
+# . directorio actual
+# -f para indicar el archivo donde estara el dockerfile de msvc-users
+#docker build -t msvc-users . -f .\msvc-users\Dockerfile
+-----------------------------OPTIMIZANDO DOCKER FILE
+
+#Import openjdk for linuix
+FROM openjdk:17.0.2
+#Create work directory
+WORKDIR /app/msvc-users
+COPY ./pom.xml  /app
+COPY ./msvc-users/pom.xml .
+COPY ./msvc-users/.mvn ./.mvn
+COPY ./msvc-users/mvnw .
+
+#Salta la compilación y test de test y main. Descarga las dependencias y borra carpeta target
+RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target
+#RUN ./mvnw dependency:go-offline
+#Copia el codigo fuente a nueva carpeta sr
+COPY ./msvc-users/src ./src
+
+RUN ./mvnw clean package -DskipTests
+#Expose port.
+EXPOSE 8001
+
+ENTRYPOINT ["java","-jar","./target/msvc-users-0.0.1-SNAPSHOT.jar"]
+
+#>RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target
+
+El comando que has proporcionado realiza una serie de acciones en un entorno de desarrollo que utiliza Maven y Spring Boot. Aquí está desglosado:
+
+./mvnw clean package: Este comando utiliza el wrapper de Maven (mvnw) para ejecutar Maven. Realiza tres acciones:
+clean: Limpia el directorio de destino (usualmente donde se almacenan los archivos de compilación y construcción) eliminando los archivos generados previamente.
+package: Compila el proyecto y crea un paquete ejecutable (por lo general, un archivo JAR) que contiene todas las dependencias y clases necesarias para ejecutar la aplicación.
+-Dmaven.test.skip: Esta opción de línea de comandos se usa para omitir la ejecución de pruebas unitarias durante la fase de compilación y empaquetado. Esto puede ser útil cuando deseas acelerar el proceso de construcción y no necesitas ejecutar las pruebas en ese momento.
+-Dmaven.main.skip: Esta opción se utiliza para omitir la ejecución del código principal de la aplicación. Puede ser útil si solo estás interesado en compilar y empaquetar el proyecto sin ejecutar la aplicación en sí.
+-Dspring-boot.repackage.skip: Esta opción específica de Spring Boot se utiliza para omitir el proceso de reempaquetado de la aplicación. Spring Boot a menudo reempaqueta la aplicación para incluir un servidor web incorporado, por lo que omitirlo puede ser útil si no necesitas ese servidor incorporado.
+&&: Este operador se utiliza para ejecutar múltiples comandos en secuencia, donde el segundo comando se ejecuta solo si el primero tiene éxito.
+rm -r ./target: Este comando elimina el directorio "target" que contiene los resultados de la construcción y empaquetado. Esto es útil si deseas limpiar completamente los archivos generados después de que la construcción sea exitosa.
+En resumen, este comando realiza una serie de acciones, que incluyen limpiar el proyecto, compilarlo, omitir las pruebas, omitir la ejecución de la aplicación principal, omitir el reempaquetado de Spring Boot y, finalmente, eliminar el directorio "target" después de una construcción exitosa. Esto podría ser útil en un flujo de trabajo de desarrollo para construir y limpiar un proyecto de Spring Boot.
+
+######################################## USANDO ALPINE PARA OPTIMIZAR EL PESO DE LA IMAGEN #####################
+FROM openjdk:17-jdk-alpine as builder
+WORKDIR /app/msvc-users
+COPY ./pom.xml  /app
+COPY ./msvc-users/pom.xml .
+COPY ./msvc-users/.mvn ./.mvn
+COPY ./msvc-users/mvnw .
+
+RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target
+#RUN ./mvnw dependency:go-offline
+COPY ./msvc-users/src ./src
+
+RUN ./mvnw clean package -DskipTests
+
+FROM openjdk:17-jdk-alpine
+WORKDIR /app
+COPY --from=builder /app/msvc-users/target/msvc-users-0.0.1-SNAPSHOT.jar .
+EXPOSE 8001
+
+ENTRYPOINT ["java","-jar","./target/msvc-users-0.0.1-SNAPSHOT.jar"]
+
+#Resultado: Usando openjdk17 pesa 626MB
+REPOSITORY            TAG       IMAGE ID       CREATED          SIZE
+msvc-users         latest    734d1c189fa4   16 minutes ago   626MB
+#Resultado: Usando alpine pesa 373MB
+REPOSITORY            TAG       IMAGE ID       CREATED          SIZE
+msvc-users         latest    85ace477fe0c   33 seconds ago   373MB
+######################################

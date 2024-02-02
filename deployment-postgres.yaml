@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: msvc-user
+  name: postgres14
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres #Also we can use role
+  template:
+    metadata:
+      labels:
+        app: postgres #this key must match with the key of matchLables, ex: must be app: or role: inn both
+    spec:
+      containers:
+        - name: postgres14 #name of the container
+          image: postgres:14-alpine #Image to be pulled from dockerhub
+          ports:
+            - containerPort: 5432 #opened port for postrges
+          env:
+            - name: POSTGRES_PASSWORD
+              #value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: msvc-course
+                  key: db_pwd
+            - name: POSTGRES_DB
+              #value: msvc_course
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: database
+          volumeMounts:
+            - name: data-postgres
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data-postgres
+          persistentVolumeClaim:
+            claimName: pvc-postgres
+          #hostPath:
+            #path: /var/lib/postgresql/data
+            #type: DirectoryOrCreate

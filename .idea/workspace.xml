@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a1490a4b-6491-4cb1-afae-564d1129f8ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/msvc-user/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/msvc-course/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/msvc-user/Docker Notes" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/msvc-user/Dockerfile" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="minikube" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2Ud4owBB3NFmq7wPj3hg8MeUso4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msvc-user [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msvc-user [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MsvcCourseApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsvcUserApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/git/MSVC_COURSE_USER&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CIAP\IT\Udemy\Java\course-kubernetes" />
+      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-course" />
+      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-user" />
+      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes" />
+      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-cursos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-usuarios\msvc-usuarios\src\main\java" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MsvcUserApplication">
+    <configuration name="MsvcCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="msvc-course" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.courses.MsvcCourseApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="msvc-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.user.MsvcUserApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="msvc-usuarios/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="msvc-usuarios/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.msvc-usuarios/Dockerfile" />
+      <item itemvalue="Spring Boot.MsvcCourseApplication" />
+      <item itemvalue="Spring Boot.MsvcUserApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.msvc-usuarios/Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
+        <option value="jdk-17.0.10-corretto-17.0.10-f644763e9732-24fca987" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1490a4b-6491-4cb1-afae-564d1129f8ee" name="Changes" comment="" />
+      <created>1693256303302</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693256303302</updated>
+      <workItem from="1693256304549" duration="78000" />
+      <workItem from="1693257117638" duration="6041000" />
+      <workItem from="1693323393635" duration="4193000" />
+      <workItem from="1694539830874" duration="2535000" />
+      <workItem from="1695157451263" duration="642000" />
+      <workItem from="1695742842879" duration="2163000" />
+      <workItem from="1696351213409" duration="19508000" />
+      <workItem from="1696522728126" duration="4239000" />
+      <workItem from="1696618446465" duration="5701000" />
+      <workItem from="1696869400895" duration="657000" />
+      <workItem from="1697646636498" duration="6633000" />
+      <workItem from="1698078653534" duration="14796000" />
+      <workItem from="1698432038334" duration="1736000" />
+      <workItem from="1698435838628" duration="10096000" />
+      <workItem from="1698681762339" duration="8054000" />
+      <workItem from="1699376218942" duration="311000" />
+      <workItem from="1699376545340" duration="598000" />
+      <workItem from="1701354313648" duration="4035000" />
+      <workItem from="1701903852179" duration="1801000" />
+      <workItem from="1706040784416" duration="6877000" />
+      <workItem from="1706048797894" duration="1015000" />
+      <workItem from="1706113287189" duration="3892000" />
+      <workItem from="1706117984200" duration="11369000" />
+      <workItem from="1706133795751" duration="3565000" />
+      <workItem from="1706137388203" duration="2942000" />
+      <workItem from="1706140468721" duration="2744000" />
+      <workItem from="1706214472035" duration="484000" />
+      <workItem from="1706214966680" duration="3028000" />
+      <workItem from="1706286669697" duration="6348000" />
+      <workItem from="1706543829178" duration="552000" />
+      <workItem from="1706561646653" duration="2826000" />
+      <workItem from="1706633342865" duration="2000" />
+      <workItem from="1706633359202" duration="7840000" />
+      <workItem from="1706721042983" duration="57000" />
+      <workItem from="1706721200988" duration="16000" />
+      <workItem from="1706733023948" duration="5787000" />
+      <workItem from="1706801410323" duration="13000" />
+      <workItem from="1706801435945" duration="4986000" />
+      <workItem from="1706888779291" duration="6066000" />
+      <workItem from="1706897269657" duration="1346000" />
+      <workItem from="1706898627673" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controller/CursoController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-user/msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/controllers/UsuarioController.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-user/msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/service/impl/UsuarioServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-user/msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/service/impl/UsuarioServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controller/CursoController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controller/CursoController.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controller/CursoController.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/services/impl/CursoServiceImpl.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/services/impl/CursoServiceImpl.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/msvc-course/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/controller/CursoController.java</url>
+          <line>68</line>
+          <properties class="org.aguzman.springcloud.msvc.cursos.controller.CursoController">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
