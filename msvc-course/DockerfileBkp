@@ -1,0 +1,26 @@
+FROM openjdk:17-jdk-alpine as builder
+WORKDIR /app/msvc-cursos
+COPY ./pom.xml  /app
+COPY ./msvc-cursos/pom.xml .
+COPY ./msvc-cursos/.mvn ./.mvn
+COPY ./msvc-cursos/mvnw .
+
+#RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target
+RUN ./mvnw dependency:go-offline
+COPY ./msvc-cursos/src ./src
+
+RUN ./mvnw clean package -DskipTests
+
+FROM openjdk:17-jdk-alpine
+WORKDIR /app
+RUN mkdir ./logs
+#Se copia el snapshot a /app y el workdir es donde comienza el container
+COPY --from=builder /app/msvc-cursos/target/msvc-cursos-0.0.1-SNAPSHOT.jar .
+EXPOSE 8002
+
+#ENTRYPOINT ["java","-jar","./target/msvc-cursos-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","msvc-cursos-0.0.1-SNAPSHOT.jar"]
+
+# construir imagen con tag msvc-cursos, indicar el path del dockerfile
+#docker build -t msvc-cursos . -f .\msvc-cursos\Dockerfile
+#docker run -p 8001:8001 --rm -it msvc-cursos /bin/sh

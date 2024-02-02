@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msvc-course
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msvc-course
+  template:
+    metadata:
+      labels:
+        app: msvc-course
+    spec:
+      containers:
+        - name: msvc-course
+          image: ciap35/msvc-course:v1.2
+          ports:
+            - containerPort: 8002
+          env:
+            - name: PORT
+              #value: "8002"
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: port
+            - name: DB_HOST
+              #value: postgres14:5432
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: db_host
+            - name: DB_DATABASE
+              #value: msvc_course
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: database
+            - name: DB_USER
+              #value: postgres
+              valueFrom:
+                #configMapKeyRef:
+                secretKeyRef:
+                  name: msvc-course
+                  key: db_username
+            - name: DB_PWD
+              #value: postgres
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: db_pwd
+            - name: USER_URL
+              #value: msvc-user:8001
+              valueFrom:
+                configMapKeyRef:
+                  name: msvc-course
+                  key: user.url
