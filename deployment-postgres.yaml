@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: msvc-user
+    app: msvc-course
   name: postgres14
 spec:
   replicas: 1
@@ -25,7 +25,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: msvc-course
-                  key: db_pwd
+                  key: password
             - name: POSTGRES_DB
               #value: msvc_course
               valueFrom:

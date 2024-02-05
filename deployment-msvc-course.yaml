@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: msvc-course
-          image: ciap35/msvc-course:v1.2
+          image: ciap35/msvc-course:v1.3
           ports:
             - containerPort: 8002
           env:
@@ -42,13 +42,14 @@ spec:
                 #configMapKeyRef:
                 secretKeyRef:
                   name: msvc-course
-                  key: db_username
+                  key: username
             - name: DB_PWD
               #value: postgres
               valueFrom:
-                configMapKeyRef:
+                #configMapKeyRef:
+                secretKeyRef:
                   name: msvc-course
-                  key: db_pwd
+                  key: password
             - name: USER_URL
               #value: msvc-user:8001
               valueFrom:

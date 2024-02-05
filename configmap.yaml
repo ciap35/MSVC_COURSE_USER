@@ -5,7 +5,7 @@ metadata:
 data:
   port: "8001"
   db_host: "mysql8:3306"
-  database: msvc_user
+  database: "msvc_user"
   course.url: "msvc-course:8002"
 ---
 apiVersion: v1
@@ -15,5 +15,5 @@ metadata:
 data:
   port: "8002"
   db_host: "postgres14:5432"
-  database: msvc_course
+  database: "msvc_course"
   user.url: "msvc-user:8001"
