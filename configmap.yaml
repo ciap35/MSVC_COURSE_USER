@@ -7,6 +7,23 @@ data:
   db_host: "mysql8:3306"
   database: "msvc_user"
   course.url: "msvc-course:8002"
+  application.yaml: |-
+    config:
+      activeEnv: sample
+    ---
+    spring:
+      config:
+        activate:
+          on-profile: dev
+    config:
+      activeEnv: dev
+    ---
+    spring:
+      config:
+        activate:
+          on-profile: prod
+    config:
+      activeEnv: prod
 ---
 apiVersion: v1
 kind: ConfigMap
