@@ -4,6 +4,7 @@ import org.springcloud.msvc.user.entity.User;
 import org.springcloud.msvc.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -19,10 +20,21 @@ public class UserController {
     private UserService service;
     @Autowired
     private ConfigurableApplicationContext context;
+    @Autowired
+    private Environment env;
 
     @GetMapping("/crash")
     public void crash(){
         ((ConfigurableApplicationContext)context).close();
+    }
+
+    @GetMapping("/environment")
+    public Map<String,Object> getEnvironment(){
+        Map<String,Object> body = new HashMap<>();
+        body.put("podInfo",env.getProperty("MY_POD_NAME")+ " : " + env.getProperty("MY_POD_IP"));
+        //Value from ConfigMap.
+        body.put("env",env.getProperty("config.activeEnv"));
+        return body;
     }
 
     @GetMapping()

@@ -14,7 +14,7 @@ import java.util.List;
 
 
 //@FeignClient(name="msvc-user",url = "msvc-user:8001")
-@FeignClient(name="msvc-user",url = "${msvc.user.url}")
+@FeignClient(name="msvc-user") //,url = "${msvc.user.url}") Is not necessary since we use service  discovery client.
 public interface UserClient {
     @GetMapping("/user/{id}")
     User get(@PathVariable Long id);

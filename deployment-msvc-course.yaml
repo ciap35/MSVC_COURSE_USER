@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: msvc-course
-          image: ciap35/msvc-course:v1.3
+          image: ciap35/msvc-course:v1.5
+          imagePullPolicy: Always
           ports:
             - containerPort: 8002
           env:
@@ -56,3 +57,27 @@ spec:
                 configMapKeyRef:
                   name: msvc-course
                   key: user.url
+          #Actuator config
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8002
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 20
+            timeoutSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8002
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 10
+          resources:
+            requests:
+              memory: "512Mi" #Ram capacity in Megabytes
+              cpu: "400m" #MiliCpu's where 1000m = 1cpu, 400m represents 40% of 1 cpu
+            limits:
+              memory: "1024Mi"
+              cpu: "500m" #Limit of 50% of the CPU

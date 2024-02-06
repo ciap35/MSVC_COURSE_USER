@@ -7,8 +7,13 @@ spec:
     storage: 2Gi #Gi = Gigabytes
   volumeMode: Filesystem
   storageClassName: standard
+  #storageClassName: "" For AWS EKS
   accessModes:
-    - ReadWriteOnce
-  hostPath:
+    - ReadWriteOnce #For AWS EKS - Used to write once in minikube, once instance
+    #- ReadWriteMany #For AWS EKS - Used to write in many instances, i.e: AWS EKS
+  #csi: #For AWS EKS
+    #driver: efs.csi.aws.com #For AWS EKS
+    #volumeHandle: <EFSIdentifier> #For AWS EKS -  i.e: EFS Identifier from AWS
+  hostPath: #Comment if we're gonna use AWS EFS
     path: /var/lib/mysql
     type: DirectoryOrCreate
