@@ -37,4 +37,7 @@ docker build -t msvc-auth:v1.0 . -f .\msvc-auth\Dockerfile
 docker tag msvc-auth:v1.0 ciap35/msvc-auth:v1.0
 docker push ciap35/msvc-auth:v1.0
 
+default msvc-auth url to login and get access code for user-client:
 http://192.168.23.176:30811/oauth2/authorization/msvc-user/client
+force URL to allow scope write if it's not configured in application.yml in msvc-user
+http://192.168.23.176:31066/oauth2/authorize?response_type=code&client_id=user-client&scope=read%20write&redirect_uri=http://192.168.23.176:30811/authorized

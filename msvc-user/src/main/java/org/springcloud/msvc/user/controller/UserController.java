@@ -7,6 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,9 @@ import java.util.*;
 @RestController
 //@RequestMapping("/user")
 public class UserController {
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private UserService service;
     @Autowired
@@ -69,6 +73,7 @@ public class UserController {
 
         ResponseEntity<Map<String, String>> errors = validateErrors(result);
         if (errors != null) return errors;
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 
@@ -101,7 +106,7 @@ public class UserController {
             modifiedUser.setName(newUser.getName());
             modifiedUser.setLastName(newUser.getLastname());
             modifiedUser.setEmail(newUser.getEmail());
-            modifiedUser.setPassword(newUser.getPassword());
+            modifiedUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
             return ResponseEntity.status(HttpStatus.OK).body(service.save(modifiedUser));
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -117,6 +122,3 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }
-
-
-
