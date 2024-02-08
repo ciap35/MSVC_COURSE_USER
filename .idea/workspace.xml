@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a1490a4b-6491-4cb1-afae-564d1129f8ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/auth.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment-msvc-course.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment-msvc-course.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment-msvc-user.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment-msvc-user.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kubectl &amp; minikube guide.txt" beforeDir="false" afterPath="$PROJECT_DIR$/kubectl &amp; minikube guide.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/controller/AuthorizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-user/src/main/java/org/springcloud/msvc/user/controller/AuthorizationController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +293,7 @@
       <workItem from="1707322683267" duration="179000" />
       <workItem from="1707322866183" duration="9923000" />
       <workItem from="1707333919970" duration="18102000" />
-      <workItem from="1707396333844" duration="14189000" />
+      <workItem from="1707396333844" duration="19950000" />
     </task>
     <servers />
   </component>

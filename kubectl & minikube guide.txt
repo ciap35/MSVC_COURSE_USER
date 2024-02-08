@@ -3,9 +3,9 @@ kubectl delete -f .\pv-postgres.yaml -f .\pvc-postgres.yaml -f .\svc-postgres.ya
 kubectl delete -f .\pv-mysql.yaml -f .\pvc-mysql.yaml -f .\svc-mysql.yaml -f .\deployment-mysql.yaml
 kubectl delete -f .\deployment-postgres.yaml -f .\deployment-mysql
 kubectl delete -f .\deployment-postgres.yaml -f .\deployment-mysql
+kubectl delete -f .\auth.yaml
 kubectl delete -f .\deployment-msvc-user.yaml -f .\deployment-msvc-course.yaml
 kubectl delete -f .\svc-msvc-user.yaml -f .\svc-msvc-course.yaml
-kubectl delete -f .\auth.yaml
 kubectl delete -f .\gateway.yaml
 
 
@@ -14,16 +14,27 @@ kubectl delete -f .\gateway.yaml
 kubectl apply -f .\configmap.yaml -f .\secret.yaml 
 kubectl apply -f .\pv-postgres.yaml -f .\pvc-postgres.yaml -f .\svc-postgres.yaml -f .\deployment-postgres.yaml
 kubectl apply -f .\pv-mysql.yaml -f .\pvc-mysql.yaml -f .\svc-mysql.yaml -f .\deployment-mysql.yaml
-kubectl apply -f .\deployment-msvc-user.yaml -f .\deployment-msvc-course.yaml
 kubectl apply -f .\svc-msvc-user.yaml -f .\svc-msvc-course.yaml
+kubectl apply -f .\deployment-msvc-course.yaml
 kubectl apply -f .\gateway.yaml
 kubectl apply -f .\auth.yaml
+#Get URLS from load balancer for msvc-user and msvc-auth, put into configMap and apply again.
+kubectl apply -f .\configmap.yaml
+#Once we got everything configured, we can deploy msvc-user because it will try to authenticate against OAUTH server from msvc-auth
+kubectl apply -f .\deployment-msvc-user.yaml
 
+
+
+#GET external address
 minikube service msvc-gateway --url
+minikube service msvc-auth --url
+minikube service msvc-user --url
 
-docker build -t msvc-user:v1.6 . -f .\msvc-user\Dockerfile 
-docker tag msvc-user:v1.6 ciap35/msvc-user:v1.6
-docker push ciap35/msvc-user:v1.6
+
+#DOCKER useful commands
+docker build -t msvc-user:v1.7 . -f .\msvc-user\Dockerfile
+docker tag msvc-user:v1.7 ciap35/msvc-user:v1.7
+docker push ciap35/msvc-user:v1.7
 
 docker build -t msvc-course:v1.5 . -f .\msvc-course\Dockerfile 
 docker tag msvc-course:v1.5 ciap35/msvc-course:v1.5
@@ -33,11 +44,22 @@ docker build -t msvc-gateway:v1.0 . -f .\msvc-gateway\Dockerfile
 docker tag msvc-gateway:v1.0 ciap35/msvc-gateway:v1.0
 docker push ciap35/msvc-gateway:v1.0
 
-docker build -t msvc-auth:v1.0 . -f .\msvc-auth\Dockerfile 
-docker tag msvc-auth:v1.0 ciap35/msvc-auth:v1.0
-docker push ciap35/msvc-auth:v1.0
+docker build -t msvc-auth:v1.1 . -f .\msvc-auth\Dockerfile
+docker tag msvc-auth:v1.1 ciap35/msvc-auth:v1.1
+docker push ciap35/msvc-auth:v1.1
 
+
+#After everything it's working: HERE ARE THE URL TO AUTHENTICATE.
 default msvc-auth url to login and get access code for user-client:
-http://192.168.23.176:30811/oauth2/authorization/msvc-user/client
+http://192.168.23.176:31066/oauth2/authorization/msvc-user-client
 force URL to allow scope write if it's not configured in application.yml in msvc-user
 http://192.168.23.176:31066/oauth2/authorize?response_type=code&client_id=user-client&scope=read%20write&redirect_uri=http://192.168.23.176:30811/authorized
+
+
+#Interact with the POD through Shell
+kubectl exec -it <PODID> -- /bin/sh
+mysql -h localhost -P 3306 -u root -p
+SHOW DATABASES;
+USE msvc_user;
+SHOW tables;
+SELECT * FROM USERS;

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: msvc-course
-          image: ciap35/msvc-course:v1.5
+          image: ciap35/msvc-course:v1.6
           imagePullPolicy: Always
           ports:
             - containerPort: 8002
