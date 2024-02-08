@@ -17,7 +17,7 @@ kubectl apply -f .\pv-mysql.yaml -f .\pvc-mysql.yaml -f .\svc-mysql.yaml -f .\de
 kubectl apply -f .\deployment-msvc-user.yaml -f .\deployment-msvc-course.yaml
 kubectl apply -f .\svc-msvc-user.yaml -f .\svc-msvc-course.yaml
 kubectl apply -f .\gateway.yaml
-
+kubectl apply -f .\auth.yaml
 
 minikube service msvc-gateway --url
 
@@ -36,3 +36,5 @@ docker push ciap35/msvc-gateway:v1.0
 docker build -t msvc-auth:v1.0 . -f .\msvc-auth\Dockerfile 
 docker tag msvc-auth:v1.0 ciap35/msvc-auth:v1.0
 docker push ciap35/msvc-auth:v1.0
+
+http://192.168.23.176:30811/oauth2/authorization/msvc-user/client

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/courses")
+//@RequestMapping("/course")
 public class CourseController {
     @Autowired
     private CourseService service;

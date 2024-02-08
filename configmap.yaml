@@ -7,6 +7,10 @@ data:
   db_host: "mysql8:3306"
   database: "msvc_user"
   course.url: "msvc-course:8002"
+  lb_auth_issuer_uri: http://192.168.23.176:31066 #MSVC-AUTH url from minikube cluster
+  lb_user_uri: http://192.168.23.176:30811 #MSVC-USER url from minikube cluster
+  #lb_auth_issuer_uri: "http://192.168.23.176:31380" #MSVC-AUTH url from minikube cluster
+  #lb_user_uri: "http://192.168.23.176:30870" #MSVC-USER url from minikube cluster
   application.yaml: |-
     config:
       activeEnv: sample

@@ -1,4 +1,4 @@
-package org.springcloud.msvc.msvcauth;
+package org.springcloud.msvc.auth;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.interfaces.RSAPrivateKey;
@@ -132,7 +132,6 @@ public class SecurityConfig {
     public ProviderSettings providerSettings() {
         return ProviderSettings.builder().build();
     }
-
 }
 
 
