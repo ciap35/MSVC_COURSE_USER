@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1490a4b-6491-4cb1-afae-564d1129f8ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubectl &amp; minikube guide.txt" beforeDir="false" afterPath="$PROJECT_DIR$/kubectl &amp; minikube guide.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/WebClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/org/springcloud/msvc/auth/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/provider/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/provider/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/services/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/services/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-course/src/main/java/org/springcloud/msvc/courses/services/impl/CourseServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,15 +98,15 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.MsvcCourseApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.MsvcUserApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/git/MSVC_COURSE_USER&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/git/MSVC_COURSE_USER/msvc-user/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
@@ -108,13 +116,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\CIAP\IT\Udemy\Java\course-kubernetes" />
-      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-course" />
-      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-user" />
-      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes" />
-      <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-cursos" />
+      <recent name="C:\git\MSVC_COURSE_USER\msvc-user\src\main\resources" />
+      <recent name="C:\git\MSVC_COURSE_USER\msvc-user\src\main\java\org\springcloud\msvc\user" />
+      <recent name="C:\git\MSVC_COURSE_USER" />
+      <recent name="C:\git\MSVC_COURSE_USER\msvc-gateway" />
+      <recent name="C:\git\MSVC_COURSE_USER\msvc-auth" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\MSVC_COURSE_USER\msvc-user\src\main\resources" />
       <recent name="C:\CIAP\Personal\Dev\Udemy\curso-kubernetes\msvc-usuarios\msvc-usuarios\src\main\java" />
     </key>
   </component>
@@ -128,6 +137,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MsvcUserApplication">
+    <configuration name="MsvcAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="msvc-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.auth.MsvcAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MsvcCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="msvc-course" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.courses.MsvcCourseApplication" />
@@ -141,6 +157,20 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
         </ENTRIES>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcGatewayApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="msvc-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.gateway.MsvcGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="msvc-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.springcloud.msvc.msvcgateway.MsvcGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,6 +218,9 @@
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.msvc-usuarios/Dockerfile" />
+      <item itemvalue="Spring Boot.MsvcAuthApplication" />
+      <item itemvalue="Spring Boot.MsvcGatewayApplication" />
+      <item itemvalue="Spring Boot.MsvcGatewayApplication (1)" />
       <item itemvalue="Spring Boot.MsvcCourseApplication" />
       <item itemvalue="Spring Boot.MsvcUserApplication" />
     </list>
@@ -255,6 +288,13 @@
       <workItem from="1706888779291" duration="6066000" />
       <workItem from="1706897269657" duration="1346000" />
       <workItem from="1706898627673" duration="19000" />
+      <workItem from="1707146859886" duration="6338000" />
+      <workItem from="1707153216938" duration="18473000" />
+      <workItem from="1707254920969" duration="1718000" />
+      <workItem from="1707322683267" duration="179000" />
+      <workItem from="1707322866183" duration="9923000" />
+      <workItem from="1707333919970" duration="18102000" />
+      <workItem from="1707396333844" duration="24376000" />
     </task>
     <servers />
   </component>

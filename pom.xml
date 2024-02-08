@@ -20,5 +20,7 @@
     <modules>
         <module>./msvc-user</module>
         <module>./msvc-course</module>
+        <module>./msvc-gateway</module>
+        <module>./msvc-auth</module>
     </modules>
 </project>

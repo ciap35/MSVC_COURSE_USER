@@ -1,4 +1,4 @@
-package org.springcloud.msvc.msvcauth;
+package org.springcloud.msvc.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

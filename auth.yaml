@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: msvc-auth
-          image: ciap35/msvc-auth:v1.0
+          image: ciap35/msvc-auth:v1.1
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
