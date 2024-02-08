@@ -112,7 +112,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Optional<Course> byUserId(Long id) {
+    public Optional<Course> byUserId(Long id,String token) {
         Optional<Course> course = repository.findById(id);
         if(course.isPresent()){
             if(!course.get().getCourseUsers().isEmpty()){
@@ -120,7 +120,7 @@ public class CourseServiceImpl implements CourseService {
                         .stream()
                         .map(x->x.getUserId())
                         .collect(Collectors.toList());
-                List<User> userList = userClient.findAllByIds(userIdLst);
+                List<User> userList = userClient.findAllByIds(userIdLst,token);
                 course.get().setUsers(userList);
                 return course;
             }

@@ -36,9 +36,9 @@ docker build -t msvc-user:v1.7 . -f .\msvc-user\Dockerfile
 docker tag msvc-user:v1.7 ciap35/msvc-user:v1.7
 docker push ciap35/msvc-user:v1.7
 
-docker build -t msvc-course:v1.5 . -f .\msvc-course\Dockerfile 
-docker tag msvc-course:v1.5 ciap35/msvc-course:v1.5
-docker push ciap35/msvc-course:v1.5
+docker build -t msvc-course:v1.6 . -f .\msvc-course\Dockerfile
+docker tag msvc-course:v1.6 ciap35/msvc-course:v1.6
+docker push ciap35/msvc-course:v1.6
 
 docker build -t msvc-gateway:v1.0 . -f .\msvc-gateway\Dockerfile 
 docker tag msvc-gateway:v1.0 ciap35/msvc-gateway:v1.0
@@ -49,17 +49,26 @@ docker tag msvc-auth:v1.1 ciap35/msvc-auth:v1.1
 docker push ciap35/msvc-auth:v1.1
 
 
-#After everything it's working: HERE ARE THE URL TO AUTHENTICATE.
+#After everything it's working
+#Accesing through MSVC-USER
 default msvc-auth url to login and get access code for user-client:
-http://192.168.23.176:31066/oauth2/authorization/msvc-user-client
-force URL to allow scope write if it's not configured in application.yml in msvc-user
+http://192.168.23.176:30811/oauth2/authorization/msvc-user-client
+#Accesing through OAUTH URL
+Request to OAUTH Server authentication and force add scope write if it's not configured in application.yml in msvc-user
 http://192.168.23.176:31066/oauth2/authorize?response_type=code&client_id=user-client&scope=read%20write&redirect_uri=http://192.168.23.176:30811/authorized
 
 
-#Interact with the POD through Shell
-kubectl exec -it <PODID> -- /bin/sh
+#Interact with the MYSQL POD through Shell
+kubectl exec -it <POD NAME> -- /bin/sh
 mysql -h localhost -P 3306 -u root -p
 SHOW DATABASES;
 USE msvc_user;
 SHOW tables;
 SELECT * FROM USERS;
+#Interact with the POSTGRES POD through Shell
+kubectl exec -it <POD NAME> -- /bin/sh
+psql -h localhost -U postgres -d msvc_course
+\dt    #SHOW TABLES
+select * from course_user;
+select * from courses;
+insert into course_user(user_id,course_id) values(1,1);

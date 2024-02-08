@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserDetailsService {
            User user = webClient
                     .build()
                     .get()
-                    .uri("http://msvc-user:8001/login",uri -> uri.queryParam("email",email).build())
+                    .uri("http://msvc-user/login",uri -> uri.queryParam("email",email).build())
                     .accept(MediaType.APPLICATION_JSON)
                     .retrieve()
                     .bodyToMono(User.class)
